@@ -92,7 +92,7 @@ export default function (
 
   // Time
   doc.setCharSpace(3.3);
-  doc.text(time, 78, 95);
+  doc.text(pad(time, 4), 78, 95);
 
   // Cruising speed
   doc.setCharSpace(3.3);
@@ -114,7 +114,7 @@ export default function (
 
   // Total flight time
   doc.setCharSpace(3.3);
-  doc.text(totalFlightTime, 77.5, 143);
+  doc.text(pad(totalFlightTime, 4), 77.5, 143);
 
   // Alternative
   doc.setCharSpace(3.3);
@@ -125,7 +125,10 @@ export default function (
   doc.text(secondAltnAerodrome.toUpperCase(), 166, 142.5);
 
   // Other information
-  let otherInformationLines = doc.splitTextToSize(otherInformation.toUpperCase(), 190);
+  let otherInformationLines = doc.splitTextToSize(
+    `DOF/${moment(date).format("YYMMDD")} ${otherInformation.toUpperCase()}`,
+    190
+  );
   doc.setCharSpace(0);
   doc.setLineHeightFactor(1.4);
   doc.text(otherInformationLines, 12, 154);
