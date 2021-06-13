@@ -131,7 +131,9 @@ export default function (
   );
   doc.setCharSpace(0);
   doc.setLineHeightFactor(1.4);
-  doc.text(otherInformationLines, 12, 154);
+  if (moment(date).format("YYMMDD") !== moment().format("YYMMDD")) {
+    doc.text(otherInformationLines, 12, 154);
+  }
 
   // Endurance
   doc.setCharSpace(3.3);
