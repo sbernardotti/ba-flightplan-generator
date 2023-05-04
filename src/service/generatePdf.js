@@ -96,11 +96,11 @@ export default function (
 
   // Cruising speed
   doc.setCharSpace(3.3);
-  doc.text(`${cruisingSpeedType}${pad(cruisingSpeed, 4)}`, 11.5, 106);
+  doc.text(`${cruisingSpeedType}${cruisingSpeed}`, 11.5, 106);
 
   // Cruising level
   doc.setCharSpace(3.3);
-  doc.text(`${cruisingLevelType}${pad(cruisingLevel, 4)}`, 44.5, 106);
+  doc.text(`${cruisingLevelType}${cruisingLevel}`, 44.5, 106);
 
   // Route
   let routeLines = doc.splitTextToSize(route.toUpperCase(), 130);
